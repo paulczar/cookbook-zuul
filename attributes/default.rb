@@ -17,20 +17,20 @@
 # limitations under the License.
 #
 
-default[:zuul][:conf_path] = "/etc/zuul/zuul.conf"
-default[:zuul][:layout_conf_path] = "/etc/zuul/layout.yaml"
-default[:zuul][:logging_conf_path] = "/etc/zuul/logging.conf"
-default[:zuul][:user] = "zuul"
-default[:zuul][:group] = "zuul"
+default['zuul']['conf_path'] = "/etc/zuul/zuul.conf"
+default['zuul']['layout_conf_path'] = "/etc/zuul/layout.yaml"
+default['zuul']['logging_conf_path'] = "/etc/zuul/logging.conf"
+default['zuul']['user'] = "zuul"
+default['zuul']['group'] = "zuul"
 # Do not add trailing slashes to these paths
-default[:zuul][:state_dir] = "/var/lib/zuul"
-default[:zuul][:log_dir] = "/var/log/zuul"
-default[:zuul][:home] = default[:zuul][:state_dir]
-default[:zuul][:jenkins][:url] = node[:jenkins][:server][:url]
-default[:zuul][:jenkins][:user] = "zuul"
-default[:zuul][:jenkins][:apikey] = "1234567890abcdef1234567890abcdef"
+default['zuul']['state_dir'] = "/var/lib/zuul"
+default['zuul']['log_dir'] = "/var/log/zuul"
+default['zuul']['home'] = default['zuul']['state_dir']
+default['zuul']['jenkins']['url'] = node['jenkins']['server']['url']
+default['zuul']['jenkins']['user'] = "zuul"
+default['zuul']['jenkins']['apikey'] = "1234567890abcdef1234567890abcdef"
 # No Gerrit cookbook exists. When it does, replace these hardcoded
 # values with defaults from the Gerrit default attributes
-default[:zuul][:gerrit][:url] = "review.example.com"
-default[:zuul][:gerrit][:user] = "zuul"
-default[:zuul][:gerrit][:sshkey] = "#{node[:zuul][:home]}/.ssh/id_rsa"
+default['zuul']['gerrit']['url'] = "review.example.com"
+default['zuul']['gerrit']['user'] = "zuul"
+default['zuul']['gerrit']['sshkey'] = "#{node['zuul']['home']}/.ssh/id_rsa"
